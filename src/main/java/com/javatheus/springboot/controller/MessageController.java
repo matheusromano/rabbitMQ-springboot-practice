@@ -14,11 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class MessageController {
 
-    @Value  ("${rabbitmq.queue.name}")
-    private String queue;
-
-    private RabbitMQConsumer consumer;
-
     private RabbitMQProducer producer;
 
     public MessageController(RabbitMQProducer producer) {
@@ -32,13 +27,6 @@ public class MessageController {
         return ResponseEntity.ok("Message sent to RabbitMQ ....");
     }
 
-    @GetMapping("/consume")
-    @RabbitListener(queues = "${rabbitmq.queue.name}")
-    public ResponseEntity<String> consumeMessage(String message) {
-        System.out.printf("Message recived: %s", message);
-        return ResponseEntity.ok("Message received from RabbitMQ ...");
-
-    }
 }
 
 
