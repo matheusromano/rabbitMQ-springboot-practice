@@ -1,3 +1,5 @@
+![RabbitMQ](https://user-images.githubusercontent.com/69260226/226987350-10e26bf8-f299-4077-9d35-967f9c6e03a9.jpg)
+
 # RabbitMQ with Spring Boot Application
 
 This is a simple RabbitMQ with Spring Boot application that runs on port 8080.
